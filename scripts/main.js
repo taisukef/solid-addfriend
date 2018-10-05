@@ -27,14 +27,17 @@ var display = function() {
 			$('#friend').val(uri);
 		}
 		
+		if (!session)
+			return;
+		
+		const person = session.webId;
+		console.log(person);
 		
 		// Set up a local data store and associated data fetcher
 		const store = $rdf.graph();
 		const fetcher = new $rdf.Fetcher(store);
 		const updater = new $rdf.UpdateManager(store);
 	
-		const person = session.webId;
-		console.log(person);
 		var s = $('#link').val();
 		console.log(s);
 		s = s.replace("[your WebID]", person);
@@ -69,6 +72,14 @@ display();
 
 $('#add').click(function() {
 	solid.auth.trackSession(async session => {
+		if (!session) {
+			alert("log in or register on Solid");
+			return;
+		}
+			
+		const myid = session.webId;
+		console.log(myid);
+		
 		// Set up a local data store and associated data fetcher
 		const store = $rdf.graph();
 		const fetcher = new $rdf.Fetcher(store);
@@ -76,9 +87,6 @@ $('#add').click(function() {
 		
 		// friend
 		const friend = $('#friend').val();
-		
-		const myid = session.webId;
-		console.log(myid);
 		
 		const me = $rdf.sym(myid);
 		const profile = me.doc();
