@@ -86,7 +86,11 @@ $('#add').click(function() {
 		const updater = new $rdf.UpdateManager(store);
 		
 		// friend
-		const friend = $('#friend').val();
+		const friend = $('#friend').val().trim();
+		if (friend.length == 0) {
+			alert("set a friend WebID");
+			return;
+		}
 		
 		const me = $rdf.sym(myid);
 		const profile = me.doc();
