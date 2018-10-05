@@ -104,7 +104,7 @@ $('#add').click(function() {
 		updater.update(del, ins, (uri, ok, message) => {
 			console.log(uri);
 			if (ok)
-				console.log('ok');
+				alert('ok');
 			else
 				alert(message);
 		});
@@ -138,7 +138,7 @@ $('#remove').click(function() {
 //		let del = store.statementsMatching(me, FOAF('knows'), null, profile);
 		updater.update(del, ins, (uri, ok, message) => {
 			if (ok)
-				console.log('ok');
+				alert('ok');
 			else
 				alert(message);
 		});
