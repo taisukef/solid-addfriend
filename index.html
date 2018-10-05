@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Add a friend on Solid / Solid Community</title>
+<link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+<h1>Add a friend on Solid</h1>
+
+<p style="border: 3px solid #9400d3; padding: 1em;">
+	<label for="profile">Friend's WebID: </label><br>
+	<input id="friend"><br>
+	<button id="add">add friend</button>
+<!--	<button id="remove">remove</button>-->
+</p>
+
+<p style="border: 3px solid #9400d3; padding: 1em;">
+	Copy and Paste this link to publish your web site.<br>
+	<textarea id="link">&lt;a href=https://taisukef.github.io/solid-addfriend/#[your WebID]"&gt;add a friend&lt;/a&gt;</textarea>
+</p>
+
+<p>
+<dl id="viewer">
+	<dt>fullname</dt><dd id="fullName"></dd>
+	<dt>note</dt><dd id="note"></dd>
+	<dt>friends</dt><dd><ul id="friends"></ul></dd>
+</dl>
+</p>
+
+<p id="login">
+	not logged in yet.<br>
+	<button>login</button>
+</p>
+<p id="logout">
+	logged in as <span id="user"></span><br>
+	<button>log out</button>
+</p>
+
+<p>
+src on GitHub<br>
+blog by taisukef<br>
+</p>
+
+
+<script src="scripts/jquery.js"></script>
+<script src="scripts/solid-auth-client.bundle.js"></script>
+<script src="scripts/rdflib.min.js"></script>
+<script src="scripts/main.js"></script>
+
+</body>
+</html>

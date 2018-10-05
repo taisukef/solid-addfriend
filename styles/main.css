@@ -1,0 +1,41 @@
+body {
+    x-max-width: 800px;
+    x-margin: 0 auto;
+}
+
+p {
+	padding: .5em;
+}
+
+.bd {
+	border: 3px solid black;
+}
+
+body, input, button {
+	font: 11pt/1.3 "Helvetiva Neue", Helvetica, Arial, sans-serif;
+}
+
+button, label {
+	font-weight: bold;
+}
+
+#profile, #friend, #link {
+	width: 80%;
+}
+
+dt {
+	font-weight: bold;
+	clear: left;
+	float: left;
+}
+dt:after {
+	content: ': ';
+}
+
+a {
+	color: #7c4dff;
+	cursor: pointer;
+}
+a:hover {
+	color: #9b79fc;
+}
